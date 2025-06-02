@@ -80,6 +80,18 @@ class FirebaseRTDB:
             print(f"Erro ao criar usuário no Firebase: {e}")
             return None
 
+
+    def deletar_usuario(self, user_id: str):
+    try:
+        url = f"https://aula-b7426-default-rtdb.firebaseio.com/users/{user_id}.json"
+        response = requests.delete(url)
+        response.raise_for_status()
+        return True
+    except Exception as e:
+        print(f"Erro ao deletar usuário no Firebase: {e}")
+        return False
+
+
     def listar_usuarios(self):
         try:
             response = requests.get(self.url)
@@ -171,3 +183,11 @@ def listar_usuarios():
 @app.get("/generos", response_model=Dict[str, int])
 def listar_generos():
     return generos_deezer
+
+
+@app.delete("/deletar_usuario/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
+def deletar_usuario(user_id: str):
+    sucesso = firebase.deletar_usuario(user_id)
+    if not sucesso:
+        raise HTTPException(status_code=404, detail="Usuário não encontrado ou erro ao deletar")
+    return None  # HTTP 204 não retorna conteúdo
