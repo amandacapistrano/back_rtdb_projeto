@@ -5,6 +5,8 @@ import random
 from datetime import datetime
 import requests
 import json
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
 
