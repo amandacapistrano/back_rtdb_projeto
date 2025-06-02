@@ -8,6 +8,11 @@ import json
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "API de recomendação de músicas funcionando! 🎶"}
+
+
 # Modelo de entrada para criação de usuário
 class UsuarioCreate(BaseModel):
     nome: str
