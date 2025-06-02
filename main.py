@@ -167,3 +167,7 @@ def criar_usuario(usuario: UsuarioCreate):
 def listar_usuarios():
     usuarios = firebase.listar_usuarios()
     return usuarios
+
+@app.get("/generos", response_model=Dict[str, int])
+def listar_generos():
+    return generos_deezer
