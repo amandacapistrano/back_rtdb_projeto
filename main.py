@@ -116,7 +116,7 @@ firebase = FirebaseRTDB(FIREBASE_URL)
 deezer = DeezerAPI()
 
 
-@app.post("/usuarios", response_model=Dict[str, str])
+@app.post("/criar_usuario", response_model=Dict[str, str])
 def criar_usuario(usuario: UsuarioCreate):
     genero_id = generos_deezer.get(usuario.genero)
     if not genero_id:
@@ -153,7 +153,7 @@ def criar_usuario(usuario: UsuarioCreate):
     return resultado  
 
 
-@app.get("/usuarios", response_model=List[Usuario])
+@app.get("/listar_usuarios", response_model=List[Usuario])
 def listar_usuarios():
     usuarios = firebase.listar_usuarios()
     return usuarios
