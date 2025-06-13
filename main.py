@@ -51,17 +51,17 @@ generos_deezer = {
     "Pop": 132,
     "Sertanejo": 80,
     "MPB": 78,
-    "Rap/Funk Brasileiro": 472,
+    "Jazz": 129,
     "Rap/Hip Hop": 116,
     "Reggaeton": 122,
     "Rock": 152,
     "Dance": 113,
     "R&B": 165,
     "Alternativo": 85,
-    "Samba/Pagode": 79,
+    "Clássica": 98,
     "Electro": 106,
     "Música Religiosa": 186,
-    "Axé/Forró": 76,
+    "Metal": 464,
 }
 
 FIREBASE_URL = "https://aula-b7426-default-rtdb.firebaseio.com/users.json"
