@@ -49,8 +49,6 @@ class Usuario(BaseModel):
 generos_deezer = {
     "Todos": 0,
     "Pop": 132,
-    "Sertanejo": 80,
-    "MPB": 78,
     "Jazz": 129,
     "Rap/Hip Hop": 116,
     "Reggaeton": 122,
